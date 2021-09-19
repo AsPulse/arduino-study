@@ -1,20 +1,3 @@
-NormalMotor leftMotor(13, 12);
-NormalMotor rightMotor(8, 7);
-const int delayL = 1000;
-
-void setup() {
-  leftMotor.setup();
-  rightMotor.setup();
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-  leftMotor.forward();
-  delay(delayL);
-  leftMotor.brake();
-  delay(delayL);
-}
-
 class NormalMotor {
   private: 
     int pin1;
@@ -44,4 +27,22 @@ class NormalMotor {
       digitalWrite(pin1, LOW);
       digitalWrite(pin2, LOW);
     }
+};
+
+
+NormalMotor leftMotor(13, 12);
+NormalMotor rightMotor(8, 7);
+const int delayL = 1000;
+
+void setup() {
+  leftMotor.setup();
+  rightMotor.setup();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  leftMotor.forward();
+  delay(delayL);
+  leftMotor.brake();
+  delay(delayL);
 }
