@@ -66,7 +66,7 @@ class PWMMotor {
       pinMode(pin2, OUTPUT);
       pinMode(pin3, OUTPUT);
     }
-    void do(double value){
+    void control(double value){
       int data = convert255(value);
       if( data > 255 ) data = 255;
       if( data < -255 ) data = -255;
@@ -90,11 +90,11 @@ PWMMotor rightM(13, 12, 11);;
 const int delayL = 1000;
 
 void setup() {
-  leftMotor.setup();
-  rightMotor.setup();
+  leftM.setup();
+  rightM.setup();
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  leftMotor.do(0.5);
+  leftM.control(0.5);
 }
