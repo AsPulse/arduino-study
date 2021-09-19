@@ -73,28 +73,40 @@ class PWMMotor {
       if( data == 0 ) {
         off();
         setPWM(0);
+        //Serial.println( "SETPMW: 0" );
       }
       if( data > 0 ) {
         setPWM(data);
         forward();
+        Serial.print( "SETPMW: ");
+        Serial.println(String(data));
+        Serial.flush();
       }
       if( data < 0 ) {
         setPWM(-data);
         back();
+        Serial.print( "SETPMW: ");
+        Serial.println(String(data));
+        Serial.flush();
+
       }
     }
 };
 
 PWMMotor leftM(8, 7, 10);
-PWMMotor rightM(13, 12, 11);;
+PWMMotor rightM(13, 12, 11);
 const int delayL = 1000;
 
 void setup() {
+  Serial.begin( 9600 );
   leftM.setup();
   rightM.setup();
+  Serial.println( "Setup finished!" );   
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  rightM.control(0.5);
   leftM.control(0.5);
+  delay(1000);
 }
