@@ -15,7 +15,7 @@ class NormalMotor {
       digitalWrite(pin1, HIGH);
       digitalWrite(pin2, LOW);
     }
-    void backard(){
+    void back(){
       digitalWrite(pin1, LOW);
       digitalWrite(pin2, HIGH);
     }
@@ -37,7 +37,7 @@ class PWMMotor {
       digitalWrite(pin1, HIGH);
       digitalWrite(pin2, LOW);
     }
-    void backard(){
+    void back(){
       digitalWrite(pin1, LOW);
       digitalWrite(pin2, HIGH);
     }
@@ -56,7 +56,7 @@ class PWMMotor {
       return round(value * 255);
     }
   public:
-    PWMMotor(int sPin1, int sPin2) {
+    PWMMotor(int sPin1, int sPin2, int sPin3) {
       pin1 = sPin1;
       pin2 = sPin2;
       pin3 = sPin3;
