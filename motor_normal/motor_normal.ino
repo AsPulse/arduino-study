@@ -79,7 +79,7 @@ class PWMMotor {
         forward();
       }
       if( data < 0 ) {
-        setPWM(-data)+
+        setPWM(-data);
         back();
       }
     }
