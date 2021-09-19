@@ -1,4 +1,3 @@
-#include <cmath>
 class NormalMotor {
   private: 
     int pin1;
@@ -54,7 +53,7 @@ class PWMMotor {
       analogWrite(pin3, value);
     }
     int convert255(double value) {
-      return std::round(value * 255);
+      return round(value * 255);
     }
   public:
     PWMMotor(int sPin1, int sPin2) {
