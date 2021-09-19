@@ -10,10 +10,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   leftMotor.forward();
-  rightMotor.forward();
   delay(delayL);
   leftMotor.brake();
-  rightMotor.brake();
   delay(delayL);
 }
 
